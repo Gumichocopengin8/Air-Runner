@@ -10,6 +10,7 @@ public class UnityChanPlayer : MonoBehaviour {
   private bool onGround = true;
   private float jumpPower = 9.0f;
   private float runSpeed = 0.05f;
+  MissileSpawner missileSpawner = new MissileSpawner();
 
 
   void Start() {
@@ -20,7 +21,6 @@ public class UnityChanPlayer : MonoBehaviour {
   void Update() {
     this.gameObject.transform.Translate(0, 0, runSpeed); // run to x axis but need write z on code
 
-    print(onGround);
     if(Input.GetKeyDown(KeyCode.Space) && onGround) { // when press space button
       rd.AddForce(transform.up * jumpPower, ForceMode.VelocityChange);
       animator.SetTrigger("Jump");

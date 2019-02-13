@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-abstract public class BaseEnemy {
+abstract public class BaseEnemy : MonoBehaviour {
 
-  protected float _speed;
+  protected float _speed = 0.01f;
 
   public float Speed {
     get => _speed;
